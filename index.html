@@ -102,9 +102,14 @@
     .btn.primary{background:linear-gradient(120deg,var(--brand),var(--brand-2));border-color:transparent;color:#fff}
     .btn.primary:hover{box-shadow:0 10px 30px -8px rgba(91,140,255,.55)}
     .btn.ghost:hover{border-color:var(--brand);background:rgba(91,140,255,.08)}
+    @media(max-width:560px){
+      header.hero .cta{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+      header.hero .cta .btn{width:100%;justify-content:center}
+      header.hero .cta .primary{grid-column:1 / -1}
+    }
 
     /* stats */
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
     @media(max-width:680px){.stats{grid-template-columns:repeat(2,1fr)}}
     .stat{border:1px solid var(--line);background:var(--bg-soft);border-radius:var(--radius);padding:22px 20px}
     .stat .n{font-size:30px;font-weight:800;letter-spacing:-.02em;background:linear-gradient(120deg,#fff,var(--brand));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -199,6 +204,7 @@
         <div class="stat reveal"><div class="n">14+</div><div class="l">years shipping mobile</div></div>
         <div class="stat reveal"><div class="n">Thousands</div><div class="l">of paying subscribers</div></div>
         <div class="stat reveal"><div class="n">20+</div><div class="l">apps &amp; products shipped</div></div>
+        <div class="stat reveal"><div class="n">C2</div><div class="l">English · EF SET 79/100</div></div>
       </div>
     </div>
   </header>
