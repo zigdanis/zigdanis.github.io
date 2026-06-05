@@ -2,60 +2,326 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-  <meta name="generator" content="Jekyll v4.0.1">
-  <title>Danis Ziganshin · iOS Developer · Swift</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Danis Ziganshin — Mobile / Product Engineer · Swift, SwiftUI, Flutter</title>
+  <meta name="description" content="Danis Ziganshin — senior mobile & product engineer with 14+ years shipping iOS and cross-platform apps. Swift, SwiftUI, Flutter, Dart. End-to-end mobile ownership.">
+  <meta name="author" content="Danis Ziganshin">
 
-  <link rel="canonical" href="https://ziganshin.pro">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Danis Ziganshin — Mobile / Product Engineer">
+  <meta property="og:description" content="14+ years shipping iOS & cross-platform apps. Swift, SwiftUI, Flutter, Dart. End-to-end mobile ownership across products with thousands of paying users.">
+  <meta property="og:url" content="https://ziganshin.pro">
+  <meta name="theme-color" content="#0b0d12">
 
-  <!-- Bootstrap core CSS -->
-  <link href="assets/dist/css/bootstrap.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 
   <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+    :root{
+      --bg:#0b0d12;
+      --bg-soft:#11141c;
+      --card:#141925;
+      --card-hover:#19202f;
+      --line:rgba(255,255,255,.08);
+      --line-strong:rgba(255,255,255,.14);
+      --text:#e8ecf3;
+      --muted:#97a1b4;
+      --faint:#6b7486;
+      --brand:#5b8cff;
+      --brand-2:#9b6bff;
+      --accent:#34e3c0;
+      --radius:18px;
+      --maxw:1080px;
     }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    .mono{font-family:'JetBrains Mono',monospace}
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
+    /* ambient background */
+    .glow{position:fixed;inset:0;z-index:-1;overflow:hidden}
+    .glow::before,.glow::after{
+      content:"";position:absolute;border-radius:50%;filter:blur(120px);opacity:.5;
     }
+    .glow::before{width:560px;height:560px;background:radial-gradient(circle,#2a4bce,transparent 70%);top:-160px;left:-120px}
+    .glow::after{width:520px;height:520px;background:radial-gradient(circle,#6b34c9,transparent 70%);top:240px;right:-160px;opacity:.4}
+
+    /* nav */
+    nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(160%) blur(12px);
+      background:rgba(11,13,18,.66);
+      border-bottom:1px solid var(--line);
+    }
+    nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+    .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+    .navlinks{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+    .navlinks a:hover{color:var(--text)}
+    .navlinks a{transition:color .15s}
+    @media(max-width:680px){.navlinks{display:none}}
+
+    /* hero */
+    header.hero{padding:88px 0 64px}
+    .status{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:13px;color:var(--accent);
+      border:1px solid rgba(52,227,192,.25);background:rgba(52,227,192,.07);
+      padding:6px 14px;border-radius:999px;margin-bottom:26px;
+    }
+    .status .pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,227,192,.5)}70%{box-shadow:0 0 0 8px rgba(52,227,192,0)}100%{box-shadow:0 0 0 0 rgba(52,227,192,0)}}
+    h1{
+      font-size:clamp(38px,6vw,64px);line-height:1.05;letter-spacing:-.03em;
+      margin:0 0 20px;font-weight:800;
+    }
+    h1 .grad{
+      background:linear-gradient(120deg,var(--brand),var(--brand-2) 55%,var(--accent));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .lead{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:660px;margin:0 0 34px}
+    .lead b{color:var(--text);font-weight:600}
+    .cta{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{
+      display:inline-flex;align-items:center;gap:9px;
+      padding:12px 20px;border-radius:12px;font-size:15px;font-weight:600;
+      border:1px solid var(--line-strong);transition:transform .15s,border-color .15s,background .15s;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary{background:linear-gradient(120deg,var(--brand),var(--brand-2));border-color:transparent;color:#fff}
+    .btn.primary:hover{box-shadow:0 10px 30px -8px rgba(91,140,255,.55)}
+    .btn.ghost:hover{border-color:var(--brand);background:rgba(91,140,255,.08)}
+
+    /* stats */
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
+    @media(max-width:680px){.stats{grid-template-columns:repeat(2,1fr)}}
+    .stat{border:1px solid var(--line);background:var(--bg-soft);border-radius:var(--radius);padding:22px 20px}
+    .stat .n{font-size:30px;font-weight:800;letter-spacing:-.02em;background:linear-gradient(120deg,#fff,var(--brand));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .stat .l{font-size:13px;color:var(--faint);margin-top:4px}
+
+    /* section */
+    section{padding:72px 0;border-top:1px solid var(--line)}
+    .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);font-weight:600;margin-bottom:12px}
+    h2{font-size:clamp(26px,3.4vw,36px);letter-spacing:-.02em;margin:0 0 8px;font-weight:700}
+    .sub{color:var(--muted);max-width:620px;margin:0 0 36px}
+
+    /* skills */
+    .skillgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    @media(max-width:680px){.skillgrid{grid-template-columns:1fr}}
+    .skillcard{border:1px solid var(--line);background:var(--card);border-radius:var(--radius);padding:22px}
+    .skillcard h3{margin:0 0 14px;font-size:15px;color:var(--muted);font-weight:600;display:flex;align-items:center;gap:9px}
+    .skillcard h3 .ic{width:20px;text-align:center}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{font-size:13px;padding:5px 12px;border-radius:8px;background:var(--bg-soft);border:1px solid var(--line);color:var(--text)}
+    .chip.key{border-color:rgba(91,140,255,.4);background:rgba(91,140,255,.1);color:#cfe0ff}
+
+    /* work */
+    .work{display:flex;flex-direction:column;gap:20px}
+    .proj{
+      border:1px solid var(--line);background:var(--card);border-radius:var(--radius);
+      padding:28px;transition:transform .18s,border-color .18s,background .18s;position:relative;overflow:hidden;
+    }
+    .proj:hover{transform:translateY(-3px);border-color:var(--line-strong);background:var(--card-hover)}
+    .proj::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--brand),var(--brand-2))}
+    .proj .top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:6px}
+    .proj h3{margin:0;font-size:22px;letter-spacing:-.01em}
+    .proj .when{font-size:13px;color:var(--faint);font-family:'JetBrains Mono',monospace}
+    .proj .role{font-size:14px;color:var(--accent);font-weight:600;margin-bottom:14px}
+    .proj p{margin:0 0 16px;color:var(--muted);font-size:15.5px}
+    .proj p b{color:var(--text);font-weight:600}
+    .stack{display:flex;flex-wrap:wrap;gap:7px}
+    .stack .t{font-size:12px;padding:4px 10px;border-radius:7px;background:var(--bg-soft);border:1px solid var(--line);color:var(--faint);font-family:'JetBrains Mono',monospace}
+
+    /* about */
+    .about{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:center}
+    @media(max-width:760px){.about{grid-template-columns:1fr;gap:28px}}
+    .ava{width:148px;height:148px;border-radius:50%;border:2px solid var(--line-strong);object-fit:cover;box-shadow:0 0 0 6px rgba(91,140,255,.08)}
+    .about p{color:var(--muted);margin:0 0 14px}
+    .about p b{color:var(--text)}
+    .arc{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+    .arc .t{font-size:12.5px;padding:5px 11px;border-radius:8px;background:var(--bg-soft);border:1px solid var(--line);font-family:'JetBrains Mono',monospace;color:var(--muted)}
+
+    /* contact */
+    .contact{text-align:center;padding:84px 0}
+    .contact h2{margin-bottom:14px}
+    .contact .sub{margin:0 auto 30px}
+    .contact .cta{justify-content:center}
+
+    footer{border-top:1px solid var(--line);padding:30px 0;color:var(--faint);font-size:13px}
+    footer .wrap{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
+    footer a{color:var(--muted)}footer a:hover{color:var(--text)}
+
+    /* reveal */
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.in{opacity:1;transform:none}
   </style>
-  <!-- Custom styles for this template -->
-  <link href="cover.css" rel="stylesheet">
 </head>
+<body>
+  <div class="glow"></div>
 
-
-<body class="text-center">
-  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto">
-      <div class="inner">
-        <h1 class="masthead-brand">Danis Ziganshin</h3>
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="#top"><span class="dot"></span>Danis Ziganshin</a>
+      <div class="navlinks">
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="Danis_Ziganshin_CV.pdf" target="_blank">CV ↗</a>
       </div>
-    </header>
+    </div>
+  </nav>
 
-    <main role="main" class="inner cover">
-      <div class="text-center">
-        <img src="images/home/avatar.jpg" class="rounded-circle" alt="...">
+  <a id="top"></a>
+  <header class="hero">
+    <div class="wrap">
+      <div class="status"><span class="pulse"></span> Open to remote & relocation roles</div>
+      <h1>Mobile &amp; product engineer who ships<br><span class="grad">iOS and cross-platform apps end&nbsp;to&nbsp;end.</span></h1>
+      <p class="lead">I'm Danis — <b>14+ years</b> building production mobile apps in <b>Swift, SwiftUI, Flutter</b> and Dart. From subscriptions and audio pipelines to fintech card flows, I own the codebase from idea to App&nbsp;Store — often as the solo developer working directly with founders.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="Danis_Ziganshin_CV.pdf" target="_blank">Download CV</a>
+        <a class="btn ghost" href="https://github.com/zigdanis" target="_blank">GitHub</a>
       </div>
-      <h1 class="cover-heading">iOS Developer</h1>
-      <p class="lead info">I'm an independent developer from Kazan, Russia. Once I started developing iOS Apps 7 years ago - I just can't get over it</p>
-      <p class="lead">👨‍💻✨</p>
-    </main>
 
-    <footer class="mastfoot mt-auto">
-      <div class="inner">
-        <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <div class="stats">
+        <div class="stat reveal"><div class="n">14+</div><div class="l">years shipping mobile</div></div>
+        <div class="stat reveal"><div class="n">1000s</div><div class="l">of paying subscribers</div></div>
+        <div class="stat reveal"><div class="n">20+</div><div class="l">apps &amp; products shipped</div></div>
+        <div class="stat reveal"><div class="n">iOS + Android</div><div class="l">platforms shipped</div></div>
       </div>
-    </footer>
-  </div>
+    </div>
+  </header>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="eyebrow">Selected work</div>
+      <h2>Products I've shipped &amp; owned</h2>
+      <p class="sub">Three commercial apps where I owned mobile end to end — architecture, features, payments, release pipelines, and everything in between.</p>
+
+      <div class="work">
+        <article class="proj reveal">
+          <div class="top"><h3>Listening</h3><span class="when">May 2023 — Present</span></div>
+          <div class="role">Solo Mobile Developer · Flutter (iOS + Android)</div>
+          <p>Own the full Flutter codebase for a document-to-audio consumer app: <b>subscriptions &amp; paywalls</b>, streaming playback, background/offline downloads, notes, folders, auth, push, monitoring, CI and releases. Supported a subscription business with <b>thousands of paying subscribers</b>.</p>
+          <div class="stack"><span class="t">Flutter</span><span class="t">Dart</span><span class="t">RevenueCat</span><span class="t">Firebase</span><span class="t">Sentry</span><span class="t">PostHog</span><span class="t">Codemagic</span><span class="t">Fastlane</span></div>
+        </article>
+
+        <article class="proj reveal">
+          <div class="top"><h3>Mythia</h3><span class="when">2018 — 2022</span></div>
+          <div class="role">Freelance Mobile Developer · US startup team (YC network)</div>
+          <p>Owned the iOS app end to end for a banking / debit-card rewards product that <b>launched card &amp; banking features to real customers</b>: onboarding, mobile verification, account/card UI, wallet, transactions, deposits, withdrawals, rewards, analytics, and TestFlight/App&nbsp;Store delivery.</p>
+          <div class="stack"><span class="t">Swift 5</span><span class="t">UIKit</span><span class="t">CoreData</span><span class="t">Combine</span><span class="t">Alamofire</span><span class="t">Segment</span><span class="t">Fastlane</span><span class="t">GitHub Actions</span></div>
+        </article>
+
+        <article class="proj reveal">
+          <div class="top"><h3>Cardsy / Leitsy</h3><span class="when">2022 — May 2023</span></div>
+          <div class="role">Solo Mobile Developer · Native Swift → Flutter migration</div>
+          <p>Built the initial native Swift iOS app, then <b>migrated and rebuilt the product in Flutter</b> for iOS, Android and Web. Shipped learning flows with animated cards, study/testing modes, subscriptions, social login, groups, stats and full release automation — preserving functionality across the platform switch.</p>
+          <div class="stack"><span class="t">Swift</span><span class="t">UIKit</span><span class="t">Flutter</span><span class="t">Dart</span><span class="t">auto_route</span><span class="t">RevenueCat</span><span class="t">OAuth</span><span class="t">Codemagic</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="eyebrow">Toolkit</div>
+      <h2>What I work with</h2>
+      <p class="sub">Deep in mobile, comfortable across the full delivery pipeline, and increasingly fast with AI-assisted engineering.</p>
+
+      <div class="skillgrid">
+        <div class="skillcard reveal">
+          <h3><span class="ic">📱</span> Mobile</h3>
+          <div class="chips">
+            <span class="chip key">Swift</span><span class="chip key">SwiftUI</span><span class="chip key">UIKit</span>
+            <span class="chip key">Flutter</span><span class="chip key">Dart</span><span class="chip">iOS</span><span class="chip">Android</span>
+          </div>
+        </div>
+        <div class="skillcard reveal">
+          <h3><span class="ic">🏗️</span> Architecture &amp; APIs</h3>
+          <div class="chips">
+            <span class="chip">App architecture</span><span class="chip">REST APIs</span><span class="chip">Generated clients</span>
+            <span class="chip">Auth / sessions</span><span class="chip">Local persistence</span><span class="chip">Caching</span>
+          </div>
+        </div>
+        <div class="skillcard reveal">
+          <h3><span class="ic">🚀</span> Delivery &amp; CI/CD</h3>
+          <div class="chips">
+            <span class="chip">Fastlane</span><span class="chip">Codemagic</span><span class="chip">TestFlight</span>
+            <span class="chip">App Store Connect</span><span class="chip">Google Play</span><span class="chip">Code signing</span>
+          </div>
+        </div>
+        <div class="skillcard reveal">
+          <h3><span class="ic">🧪</span> Quality &amp; AI-assisted</h3>
+          <div class="chips">
+            <span class="chip">XCTest</span><span class="chip">Flutter tests</span><span class="chip">E2E / unit</span>
+            <span class="chip">Crash monitoring</span><span class="chip key">Claude Code</span><span class="chip key">Cursor</span><span class="chip key">Codex</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="eyebrow">About</div>
+      <h2>From Objective-C to AI-assisted Flutter</h2>
+      <div class="about" style="margin-top:30px">
+        <img class="ava" src="images/home/avatar.jpg" alt="Danis Ziganshin">
+        <div>
+          <p>I started professional iOS development in <b>2012</b> with Objective-C, adopted <b>Swift</b> from Swift&nbsp;2, and later moved into <b>Flutter/Dart</b> to ship cross-platform. Along the way I've worked at agencies, freelanced for foreign clients via Upwork, and embedded with US startup teams in the Y&nbsp;Combinator network.</p>
+          <p>I'm <b>independent, practical and product-aware</b> — happiest taking an ambiguous mobile problem from idea to a shipped, polished feature. Based in Kazan (GMT+3), open to remote work and relocation.</p>
+          <div class="arc">
+            <span class="t">2012 · Objective-C / iOS</span>
+            <span class="t">Swift 2+</span>
+            <span class="t">SwiftUI</span>
+            <span class="t">Flutter / Dart</span>
+            <span class="t">AI-assisted eng</span>
+          </div>
+          <p style="margin-top:18px;font-size:14px;color:var(--faint)">English: C2 Proficient (EF SET 79/100, 2022) · Russian: native</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="eyebrow" style="text-align:center">Contact</div>
+      <h2>Let's build something</h2>
+      <p class="sub">Looking for a mobile/product engineer who owns the codebase end to end? Let's talk.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:zigdanis@gmail.com">zigdanis@gmail.com</a>
+        <a class="btn ghost" href="https://linkedin.com/in/dan1s" target="_blank">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/zigdanis" target="_blank">GitHub</a>
+        <a class="btn ghost" href="Danis_Ziganshin_CV.pdf" target="_blank">CV (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Danis Ziganshin · Kazan, Russia</span>
+      <span><a href="mailto:zigdanis@gmail.com">zigdanis@gmail.com</a> · <a href="https://github.com/zigdanis" target="_blank">github.com/zigdanis</a></span>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((es)=>{
+      es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
+  </script>
 </body>
 </html>
