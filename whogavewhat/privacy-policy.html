@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Danis Ziganshin">
+  <meta name="description" content="How the WhoGaveWhat iPhone app handles your information.">
+  <meta name="color-scheme" content="light dark">
+  <title>WhoGaveWhat · Privacy Policy</title>
+  <link rel="canonical" href="https://ziganshin.pro/whogavewhat/privacy-policy">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #16181d;
+      --muted: #5c6370;
+      --line: rgba(0, 0, 0, .12);
+      --accent: #3d4fe0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0d11;
+        --text: #f2f3f5;
+        --muted: #a1a6b0;
+        --line: rgba(255, 255, 255, .12);
+        --accent: #8e9bff;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      width: min(720px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(32px, 7vh, 72px) 0 56px;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .app {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: clamp(32px, 6vw, 44px);
+      line-height: 1.1;
+      letter-spacing: -.02em;
+    }
+
+    .updated { margin: 0 0 32px; color: var(--muted); font-size: 15px; }
+
+    h2 {
+      margin: 40px 0 10px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-size: 21px;
+      letter-spacing: -.01em;
+    }
+
+    h3 { margin: 24px 0 6px; font-size: 17px; }
+
+    p, ul { margin: 0 0 14px; }
+    ul { padding-left: 22px; }
+    li { margin-bottom: 6px; }
+
+    a { color: var(--accent); }
+
+    .summary {
+      padding: 18px 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .summary ul { margin: 0; }
+
+    footer {
+      margin-top: 48px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <p class="app">WhoGaveWhat for iPhone</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: October 16, 2026</p>
+
+    <p>WhoGaveWhat (shown as “Who Gave” on the Home Screen) is an app for remembering the gifts you
+      give and receive. It is made by Danis Ziganshin, who is responsible for your information as
+      described here. This policy explains what the app does with your information.</p>
+
+    <div class="summary">
+      <ul>
+        <li>Your gifts, people, photos and settings stay on your iPhone, except gift names you
+          choose to send for cloud icon suggestions.</li>
+        <li>There are no accounts, ads, third-party analytics or tracking.</li>
+        <li>Cloud icon suggestions are optional and off until you allow them.</li>
+      </ul>
+    </div>
+
+    <h2>Information stored on your device</h2>
+    <p>The people, gifts, amounts, dates, occasions and photos you add are stored only in the
+      app’s storage on your iPhone. Apart from gift names you choose to send for cloud icon
+      suggestions (below), they are not uploaded to any server, and I have no access to them. They are included in backups of your iPhone that you make with iCloud or a computer,
+      under your backup settings. Deleting the app deletes this information from your iPhone.</p>
+    <p>When you add a photo of a person, you pick it with the system photo picker. The app receives
+      only the photo you choose and keeps a copy on your device. It cannot see the rest of your
+      photo library.</p>
+    <p>Without cloud icon suggestions, the app picks gift icons on your device, using Apple
+      Intelligence where it is available and turned on, or a built-in word list.</p>
+
+    <h2>Cloud icon suggestions (optional)</h2>
+    <p>WhoGaveWhat can suggest an icon for a gift using the Jev model from TypeSafe AI. This
+      feature is off until you allow it in the Add Gift screen or turn on
+      <strong>Settings → Cloud icon suggestions</strong>. You can turn it off there at any time,
+      and the app then picks icons on your device again.</p>
+
+    <h3>What is sent</h3>
+    <p>When the feature is on, the app sends a request when you allow the feature or pause while
+      typing a gift name. Each request contains:</p>
+    <ul>
+      <li>the gift name you typed, up to 80 characters;</li>
+      <li>a random identifier created for this feature and used only to limit how many requests
+        one installation can make. It is not derived from your device or Apple account, and a new
+        one is created whenever you turn the feature off;</li>
+      <li>standard network information that every internet request carries, such as your IP
+        address and the app and iOS versions.</li>
+    </ul>
+    <p>The app never sends people, contacts, dates, amounts, occasions or photos.</p>
+    <p>Gift names can contain personal information. If you would rather not share a name, leave the
+      feature off or choose the icon yourself.</p>
+
+    <h3>Where it goes</h3>
+    <p>The request goes to the WhoGaveWhat server, which I run on Cloudflare Workers. The server
+      forwards only the gift name to TypeSafe AI, which chooses an icon and returns it.</p>
+    <ul>
+      <li><strong>The WhoGaveWhat server</strong> does not log gift names, identifiers or IP addresses,
+        or store them in readable form. To limit requests, it counts them under codes made from the identifier and IP
+        address with a random key that changes every day. Each key, and the counts made with it, are
+        deleted within three days. To avoid repeating requests, it keeps each chosen icon under a
+        code made from the gift name, not linked to you, and deletes it after 30 days.</li>
+      <li><strong>Cloudflare</strong> runs the server and so processes each request, including the
+        gift name, the identifier and network information, to deliver and protect the service,
+        under the <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare Privacy
+        Policy</a>.</li>
+      <li><strong>TypeSafe AI</strong> receives only the gift name and processes it to choose an
+        icon, under its <a href="https://typesafe.ai/legal/mca">Master Customer Agreement</a> and
+        <a href="https://typesafe.ai/legal/privacy-policy">Privacy Policy</a>. TypeSafe states that
+        it does not train or fine-tune AI models on request data. Under those terms it may keep
+        request data, and logs and statistics derived from it, without a fixed time limit, to
+        provide and improve its service, prevent abuse and meet legal obligations, and may share
+        it with its own service providers.</li>
+    </ul>
+    <p>Cloudflare and TypeSafe may process requests outside your country, including in the United
+      States, under the terms above.</p>
+
+    <h2>Information from Apple</h2>
+    <p>If you choose to share analytics with app developers in your iPhone’s settings, Apple may
+      give me crash reports and aggregated usage statistics that do not identify you. If you test a
+      TestFlight build, Apple also gives me the crash reports and feedback you choose to send.</p>
+
+    <h2>What I do not do</h2>
+    <ul>
+      <li>I do not sell your information or share it for advertising.</li>
+      <li>I do not track you across apps or websites.</li>
+      <li>I do not use your information to train AI models.</li>
+    </ul>
+
+    <h2>Your choices and rights</h2>
+    <p>Cloud icon suggestions rely on your consent, which you can withdraw at any time by turning
+      the feature off in Settings. Requests already sent are not affected.</p>
+    <ul>
+      <li>Edit or delete any person or gift in the app, or delete the app to remove everything from
+        your iPhone.</li>
+      <li>Depending on where you live, you may have the right to access or delete your personal
+        information, or to object to how it is used. Because the WhoGaveWhat server keeps nothing that
+        identifies you, and deletes its request counts within three days, there is usually nothing
+        to look up, but email me and I will help, including forwarding your request to
+        TypeSafe.</li>
+      <li>You can also complain to your local data protection authority.</li>
+    </ul>
+
+    <h2>Children</h2>
+    <p>WhoGaveWhat is not directed at children under 13, and I do not knowingly collect personal
+      information from them.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If the app’s handling of information changes, I will update this page and the date above
+      before the change takes effect.</p>
+
+    <h2>Contact</h2>
+    <p>For questions about privacy in WhoGaveWhat, email
+      <a href="mailto:zigdanis@gmail.com">zigdanis@gmail.com</a>.</p>
+
+    <footer>
+      <p>© 2026 <a href="https://ziganshin.pro">Danis Ziganshin</a></p>
+    </footer>
+  </main>
+</body>
+</html>
