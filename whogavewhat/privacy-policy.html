@@ -99,7 +99,7 @@
   <main>
     <p class="app">WhoGaveWhat for iPhone</p>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: October 16, 2026</p>
+    <p class="updated">Last updated: October 23, 2026</p>
 
     <p>WhoGaveWhat (shown as “Who Gave” on the Home Screen) is an app for remembering the gifts you
       give and receive. It is made by Danis Ziganshin, who is responsible for your information as
@@ -108,25 +108,27 @@
     <div class="summary">
       <ul>
         <li>Your gifts, people, photos and settings stay on your iPhone, except gift names you
-          choose to send for cloud icon suggestions.</li>
+          choose to send for cloud suggestions.</li>
         <li>There are no accounts, ads, third-party analytics or tracking.</li>
-        <li>Cloud icon suggestions are optional and off until you allow them.</li>
+        <li>Cloud suggestions are optional and off until you allow them.</li>
       </ul>
     </div>
 
     <h2>Information stored on your device</h2>
     <p>The people, gifts, amounts, dates, occasions and photos you add are stored only in the
-      app’s storage on your iPhone. Apart from gift names you choose to send for cloud icon
+      app’s storage on your iPhone. Apart from gift names you choose to send for cloud
       suggestions (below), they are not uploaded to any server, and I have no access to them. They are included in backups of your iPhone that you make with iCloud or a computer,
       under your backup settings. Deleting the app deletes this information from your iPhone.</p>
     <p>When you add a photo of a person, you pick it with the system photo picker. The app receives
       only the photo you choose and keeps a copy on your device. It cannot see the rest of your
       photo library.</p>
-    <p>Without cloud icon suggestions, the app picks gift icons on your device, using Apple
-      Intelligence where it is available and turned on, or a built-in word list.</p>
+    <p>Without cloud suggestions, the app picks gift icons on your device, using Apple
+      Intelligence where it is available and turned on, or a built-in word list, and does not
+      suggest prices.</p>
 
-    <h2>Cloud icon suggestions (optional)</h2>
-    <p>WhoGaveWhat can suggest an icon for a gift using the Jev model from TypeSafe AI. This
+    <h2>Cloud suggestions (optional)</h2>
+    <p>WhoGaveWhat can suggest an icon and an approximate price for a gift using the Jev model
+      from TypeSafe AI. This
       feature is off until you allow it in the Add Gift screen or turn on
       <strong>Settings → Cloud icon suggestions</strong>. You can turn it off there at any time,
       and the app then picks icons on your device again.</p>
@@ -136,31 +138,35 @@
       typing a gift name. Each request contains:</p>
     <ul>
       <li>the gift name you typed, up to 80 characters;</li>
+      <li>the currency you chose in the app (Russian rubles or US dollars), so the suggested price
+        is in that currency;</li>
       <li>a random identifier created for this feature and used only to limit how many requests
         one installation can make. It is not derived from your device or Apple account, and a new
         one is created whenever you turn the feature off;</li>
       <li>standard network information that every internet request carries, such as your IP
         address and the app and iOS versions.</li>
     </ul>
-    <p>The app never sends people, contacts, dates, amounts, occasions or photos.</p>
+    <p>The app never sends people, contacts, dates, amounts, occasions or photos. A suggested
+      price is only a hint: it is filled in as an estimate, and you can change or remove it.</p>
     <p>Gift names can contain personal information. If you would rather not share a name, leave the
       feature off or choose the icon yourself.</p>
 
     <h3>Where it goes</h3>
     <p>The request goes to the WhoGaveWhat server, which I run on Cloudflare Workers. The server
-      forwards only the gift name to TypeSafe AI, which chooses an icon and returns it.</p>
+      forwards only the gift name and the currency to TypeSafe AI, which chooses an icon and an
+      approximate price and returns them.</p>
     <ul>
       <li><strong>The WhoGaveWhat server</strong> does not log gift names, identifiers or IP addresses,
         or store them in readable form. To limit requests, it counts them under codes made from the identifier and IP
         address with a random key that changes every day. Each key, and the counts made with it, are
-        deleted within three days. To avoid repeating requests, it keeps each chosen icon under a
-        code made from the gift name, not linked to you, and deletes it after 30 days.</li>
+        deleted within three days. To avoid repeating requests, it keeps each answer under a
+        code made from the gift name and currency, not linked to you, and deletes it after 30 days.</li>
       <li><strong>Cloudflare</strong> runs the server and so processes each request, including the
         gift name, the identifier and network information, to deliver and protect the service,
         under the <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare Privacy
         Policy</a>.</li>
-      <li><strong>TypeSafe AI</strong> receives only the gift name and processes it to choose an
-        icon, under its <a href="https://typesafe.ai/legal/mca">Master Customer Agreement</a> and
+      <li><strong>TypeSafe AI</strong> receives only the gift name and the currency and processes
+        them to choose an icon and an approximate price, under its <a href="https://typesafe.ai/legal/mca">Master Customer Agreement</a> and
         <a href="https://typesafe.ai/legal/privacy-policy">Privacy Policy</a>. TypeSafe states that
         it does not train or fine-tune AI models on request data. Under those terms it may keep
         request data, and logs and statistics derived from it, without a fixed time limit, to
@@ -183,7 +189,7 @@
     </ul>
 
     <h2>Your choices and rights</h2>
-    <p>Cloud icon suggestions rely on your consent, which you can withdraw at any time by turning
+    <p>Cloud suggestions rely on your consent, which you can withdraw at any time by turning
       the feature off in Settings. Requests already sent are not affected.</p>
     <ul>
       <li>Edit or delete any person or gift in the app, or delete the app to remove everything from
@@ -198,7 +204,7 @@
 
     <h2>Children</h2>
     <p>WhoGaveWhat is for people of all ages. It has no accounts, and nothing stored in the app is
-      shared with me. Cloud icon suggestions stay off until someone allows them, so a parent who
+      shared with me. Cloud suggestions stay off until someone allows them, so a parent who
       would rather keep gift names on the device can simply leave the feature off. If you think a
       child has sent personal information in a gift name, email me and I will help as described
       above.</p>
