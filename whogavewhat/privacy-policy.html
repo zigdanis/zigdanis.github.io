@@ -99,7 +99,7 @@
   <main>
     <p class="app">WhoGaveWhat for iPhone</p>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: October 23, 2026</p>
+    <p class="updated">Last updated: October 26, 2026</p>
 
     <p>WhoGaveWhat (shown as “Who Gave” on the Home Screen) is an app for remembering the gifts you
       give and receive. It is made by Danis Ziganshin, who is responsible for your information as
@@ -109,7 +109,9 @@
       <ul>
         <li>Your gifts, people, photos and settings stay on your iPhone, except gift names you
           choose to send for cloud suggestions.</li>
-        <li>There are no accounts, ads, third-party analytics or tracking.</li>
+        <li>There are no accounts, ads or tracking.</li>
+        <li>Anonymous usage statistics and crash reports help me improve the app. They never
+          include names, gift titles, amounts or photos, and you can turn them off in Settings.</li>
         <li>Cloud suggestions are optional and off until you allow them.</li>
       </ul>
     </div>
@@ -176,6 +178,49 @@
     <p>Cloudflare and TypeSafe may process requests outside your country, including in the United
       States, under the terms above.</p>
 
+    <h2>Usage statistics and crash reports</h2>
+    <p>To see which parts of the app are used and to fix crashes, the app sends anonymous usage
+      events and crash reports unless you turn off <strong>Settings → Diagnostics → Share usage
+      and crash reports</strong>. While it is off, nothing in this section leaves your iPhone.
+      Reports already sent are not affected.</p>
+
+    <h3>What is sent</h3>
+    <ul>
+      <li><strong>Usage events</strong>: which screens and actions were used, such as “gift saved”,
+        “person added” or “settings opened”, with facts about the action only, for example whether
+        the gift was given or received, whether a date or icon was set, and where the Add Gift
+        screen was opened from. Opening, closing, installing and updating the app are recorded
+        too.</li>
+      <li><strong>Counts and settings</strong>: how many gifts and people you have, whether you
+        have set yourself in the People list, the currency you chose and whether cloud suggestions
+        are on. These travel with every event and crash report as numbers and settings, never as
+        the data itself.</li>
+      <li><strong>Crash reports</strong>: when the app crashes, hangs or runs into an error it
+        cannot handle, a report with the technical details of the failure (the code path, the
+        error type and the same counts and settings) and the names of the last few usage events
+        before it. Crash reports contain no screenshots and no screen contents.</li>
+      <li><strong>Device details</strong> every such report carries: iPhone model, iOS version,
+        app version, language and time zone, a random installation identifier created by the
+        reporting library and stored only on your iPhone, and your IP address, from which PostHog
+        derives an approximate (city-level) location. The identifier is not derived from your device
+        or Apple account and is deleted with the app.</li>
+    </ul>
+    <p>The app never sends people, gift titles, amounts, dates, occasions, photos or anything else
+      you typed. Reports are not linked to you, and I have no way to find which ones came from
+      your iPhone.</p>
+
+    <h3>Where it goes</h3>
+    <ul>
+      <li><strong>PostHog</strong> (PostHog, Inc.) receives the usage events and stores them on its
+        servers in the European Union, under the <a href="https://posthog.com/privacy">PostHog
+        Privacy Policy</a>. Because the events are anonymous, they stay until I delete them.</li>
+      <li><strong>Sentry</strong> (Functional Software, Inc.) receives the crash reports and stores
+        them in the United States, under the <a href="https://sentry.io/privacy/">Sentry Privacy
+        Policy</a>. Sentry deletes each report 90 days after it arrives.</li>
+    </ul>
+    <p>I use both services only to understand how the app is used and to fix problems. Neither of
+      them shows ads or shares the reports with anyone else for their own purposes.</p>
+
     <h2>Information from Apple</h2>
     <p>If you choose to share analytics with app developers in your iPhone’s settings, Apple may
       give me crash reports and aggregated usage statistics that do not identify you. If you test a
@@ -190,22 +235,26 @@
 
     <h2>Your choices and rights</h2>
     <p>Cloud suggestions rely on your consent, which you can withdraw at any time by turning
-      the feature off in Settings. Requests already sent are not affected.</p>
+      the feature off in Settings. Requests already sent are not affected. Usage statistics and
+      crash reports can be turned off in <strong>Settings → Diagnostics</strong> at any time, and
+      the app then sends nothing to PostHog or Sentry.</p>
     <ul>
       <li>Edit or delete any person or gift in the app, or delete the app to remove everything from
         your iPhone.</li>
       <li>Depending on where you live, you may have the right to access or delete your personal
         information, or to object to how it is used. Because the WhoGaveWhat server keeps nothing that
-        identifies you, and deletes its request counts within three days, there is usually nothing
-        to look up, but email me and I will help, including forwarding your request to
-        TypeSafe.</li>
+        identifies you, and deletes its request counts within three days, and usage and crash
+        reports are anonymous, there is usually nothing to look up, but email me and I will help,
+        including forwarding your request to TypeSafe, PostHog or Sentry.</li>
       <li>You can also complain to your local data protection authority.</li>
     </ul>
 
     <h2>Children</h2>
     <p>WhoGaveWhat is for people of all ages. It has no accounts, and nothing stored in the app is
-      shared with me. Cloud suggestions stay off until someone allows them, so a parent who
-      would rather keep gift names on the device can simply leave the feature off. If you think a
+      shared with me. Usage statistics and crash reports contain no names, gift titles or other
+      personal details and can be turned off in Settings. Cloud suggestions stay off until someone
+      allows them, so a parent who would rather keep gift names on the device can simply leave the
+      feature off. If you think a
       child has sent personal information in a gift name, email me and I will help as described
       above.</p>
 
