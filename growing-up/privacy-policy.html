@@ -1,115 +1,219 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.5">
-    <title>GrowingUp · Privacy Policy</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Danis Ziganshin">
+  <meta name="description" content="How the GrowingUp iPhone app handles your information.">
+  <meta name="color-scheme" content="light dark">
+  <title>GrowingUp · Privacy Policy</title>
+  <link rel="canonical" href="https://ziganshin.pro/growing-up/privacy-policy">
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/cover/">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #16181d;
+      --muted: #5c6370;
+      --line: rgba(0, 0, 0, .12);
+      --accent: #3d4fe0;
+    }
 
-    <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0d11;
+        --text: #f2f3f5;
+        --muted: #a1a6b0;
+        --line: rgba(255, 255, 255, .12);
+        --accent: #8e9bff;
       }
+    }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="../cover.css" rel="stylesheet">
-  </head>
+    * { box-sizing: border-box; }
 
-  <body>
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
-        <div class="inner">
-          <h3 class="masthead-brand">
-            <a href="https://itunes.apple.com/app/id1461697772">GrowingUp</a>
-          </h3>
-        </div>
-      </header>
-    
-      <main role="main" class="inner cover">
-        <h1 class="cover-heading text-center">Privacy Policy</h1>
-        <div class="lead">
-          <p>Danis Ziganshin built the GrowingUp app as a Free app. This SERVICE is provided by Danis Ziganshin at no cost and is intended for use as is.</p>
+    html, body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-          <p>This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.</p>
+    main {
+      width: min(720px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(32px, 7vh, 72px) 0 56px;
+      font-size: 17px;
+      line-height: 1.6;
+    }
 
-          <p>If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.</p>
+    .app {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
 
-          <h2>Information Collection and Use</h2>
+    h1 {
+      margin: 0 0 6px;
+      font-size: clamp(32px, 6vw, 44px);
+      line-height: 1.1;
+      letter-spacing: -.02em;
+    }
 
-          <p>For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information, including but not limited to name, last name, date of birth, profile image. The information that I request will be retained on your device and is not collected by me in any way.</p>
+    .updated { margin: 0 0 32px; color: var(--muted); font-size: 15px; }
 
-          <p>The app does use third party services that may collect information used to identify you. <a href="https://mixpanel.com/legal/privacy-overview/">Mixpanel Privacy Policy</a></p>
+    h2 {
+      margin: 40px 0 10px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-size: 21px;
+      letter-spacing: -.01em;
+    }
 
-          <h2>Log Data</h2>
+    h3 { margin: 24px 0 6px; font-size: 17px; }
 
-          <p>I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.</p>
+    p, ul { margin: 0 0 14px; }
+    ul { padding-left: 22px; }
+    li { margin-bottom: 6px; }
 
-          <h2>Cookies</h2>
+    a { color: var(--accent); }
 
-          <p>Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory.</p>
+    .summary {
+      padding: 18px 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
 
-          <p>This Service does not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.</p>
+    .summary ul { margin: 0; }
 
-          <h2>Service Providers</h2>
+    footer {
+      margin-top: 48px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+  </style>
+</head>
 
-          <p>I may employ third-party companies and individuals due to the following reasons:</p>
+<body>
+  <main>
+    <p class="app">GrowingUp for iPhone</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: October 29, 2026</p>
 
-          <ul>
-            <li>To facilitate our Service;</li>
-            <li>To provide the Service on our behalf;</li>
-            <li>To perform Service-related services; or</li>
-            <li>To assist us in analyzing how our Service is used.</li>
-          </ul>
+    <p>GrowingUp is an app for watching the people you love grow up: it shows their age, counting up
+      live, and their next birthday, in the app and in its widgets. It is made by Danis Ziganshin,
+      who is responsible for your information as described here. This policy explains what the app
+      does with your information.</p>
 
-          <p>I want to inform users of this Service that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.</p>
-
-          <h2>Security</h2>
-
-          <p>I value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and I cannot guarantee its absolute security.</p>
-
-          <h2>Links to Other Sites</h2>
-
-          <p>This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by me. Therefore, I strongly advise you to review the Privacy Policy of these websites. I have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
-
-          <h2>Children’s Privacy</h2>
-
-          <p>These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13. In the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to do necessary actions.</p>
-
-          <h2>Changes to This Privacy Policy</h2>
-
-          <p>I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.</p>
-
-          <h2>Contact Us</h2>
-
-          <p>If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at zigdanis@gmail.com.</p>
-        </div>
-      </main>
-
-      <footer class="mastfoot mt-auto text-center">
-        <div class="inner">
-          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-        </div>
-      </footer>
+    <div class="summary">
+      <ul>
+        <li>The names, birthdays and photos you add stay on your iPhone. They are never sent to me
+          or to any service.</li>
+        <li>There are no accounts, ads or tracking.</li>
+        <li>Anonymous usage statistics and crash reports help me improve the app. They never
+          include names, birthdays, ages or photos.</li>
+      </ul>
     </div>
-  </body>
-</html>
 
+    <h2>Information stored on your device</h2>
+    <p>The people you add, with their names, dates and times of birth, photos and settings (such as
+      which people the widget shows), are stored only in the app&rsquo;s storage on your iPhone,
+      which the app shares with its own Home Screen and Lock Screen widgets. They are not uploaded
+      to any server, and I have no access to them. They are included in backups of your iPhone that
+      you make with iCloud or a computer, under your backup settings. Deleting the app deletes this
+      information from your iPhone.</p>
+    <p>When you add a photo, you can take one with the camera or choose one from your photo
+      library. If you allow access to your library, or to selected photos only, the app shows those
+      photos so you can pick one, and keeps a copy of the photo you pick and the parts of it you
+      frame. It never uploads your photos.</p>
+    <p>Widgets show names, ages and photos on your Home Screen and Lock Screen, where anyone who
+      sees your iPhone can see them. You choose who appears there in the app.</p>
+
+    <h2>Usage statistics and crash reports</h2>
+    <p>To see which parts of the app are used and to fix crashes, the app sends anonymous usage
+      events and crash reports. The widgets send nothing.</p>
+
+    <h3>What is sent</h3>
+    <ul>
+      <li><strong>Usage events</strong>: which screens and actions were used, such as &ldquo;person
+        added&rdquo;, &ldquo;photo picked&rdquo; or &ldquo;opened from a widget&rdquo;, with facts
+        about the action only, for example whether a photo or a time of birth was set, whether the
+        person is shown on the widget, and where the screen was opened from. Opening, closing,
+        installing and updating the app are recorded too.</li>
+      <li><strong>Counts</strong>: how many people you have added and how many the widget shows.
+        These travel with every event and crash report as numbers, never as the people
+        themselves.</li>
+      <li><strong>Crash reports</strong>: when the app crashes, hangs or runs into an error it
+        cannot handle, a report with the technical details of the failure (the code path, the error
+        type and the same counts) and the names of the last few usage events before it. Crash
+        reports contain no screenshots and no screen contents.</li>
+      <li><strong>Device details</strong> every such report carries: iPhone model, iOS version, app
+        version, language and time zone, and a random installation identifier created by the
+        reporting library and stored only on your iPhone. The identifier is not derived from your
+        device or Apple account and is deleted with the app. Like every internet request, reports
+        also carry your IP address; the app asks PostHog not to derive a location from it, and both
+        services are set not to store it.</li>
+    </ul>
+    <p>The app never sends names, birthdays, ages, photos, widget contents or anything else you
+      typed or picked, and no event reveals a birthday by when it is sent. Reports are not linked to
+      you, and I have no way to find which ones came from your iPhone.</p>
+
+    <h3>Where it goes</h3>
+    <ul>
+      <li><strong>PostHog</strong> (PostHog, Inc.) receives the usage events and stores them on its
+        servers in the European Union, under the <a href="https://posthog.com/privacy">PostHog
+        Privacy Policy</a>, for up to one year.</li>
+      <li><strong>Sentry</strong> (Functional Software, Inc.) receives the crash reports and stores
+        them in the European Union (Germany), under the <a href="https://sentry.io/privacy/">Sentry
+        Privacy Policy</a>. Sentry deletes each report within 90 days after it arrives.</li>
+    </ul>
+    <p>I use both services only to understand how the app is used and to fix problems. Neither of
+      them shows ads or shares the reports with anyone else for their own purposes.</p>
+
+    <h2>Information from Apple</h2>
+    <p>If you choose to share analytics with app developers in your iPhone&rsquo;s settings, Apple
+      may give me crash reports and aggregated usage statistics that do not identify you. If you
+      test a TestFlight build, Apple also gives me the crash reports and feedback you choose to
+      send.</p>
+
+    <h2>What I do not do</h2>
+    <ul>
+      <li>I do not sell your information or share it for advertising.</li>
+      <li>I do not track you across apps or websites.</li>
+      <li>I do not use your information to train AI models.</li>
+    </ul>
+
+    <h2>Your choices and rights</h2>
+    <ul>
+      <li>Edit or remove any person in the app, or delete the app to remove everything from your
+        iPhone.</li>
+      <li>Usage statistics and crash reports are anonymous, and the app has no switch to turn them
+        off.</li>
+      <li>Depending on where you live, you may have the right to access or delete your personal
+        information, or to object to how it is used. Because usage and crash reports are anonymous,
+        there is usually nothing to look up, but email me and I will help, including forwarding your
+        request to PostHog or Sentry.</li>
+      <li>You can also complain to your local data protection authority.</li>
+    </ul>
+
+    <h2>Children</h2>
+    <p>People often use GrowingUp to follow their children&rsquo;s ages. The children whose names,
+      birthdays and photos you add do not use the app themselves, and their details never leave your
+      iPhone: usage statistics and crash reports contain no names, birthdays, ages or photos.
+      GrowingUp has no accounts, and nothing stored in the app is shared with me.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If the app&rsquo;s handling of information changes, I will update this page and the date
+      above before the change takes effect.</p>
+
+    <h2>Contact</h2>
+    <p>For questions about privacy in GrowingUp, email
+      <a href="mailto:zigdanis@gmail.com">zigdanis@gmail.com</a>.</p>
+
+    <footer>
+      <p>&copy; 2026 <a href="https://ziganshin.pro">Danis Ziganshin</a></p>
+    </footer>
+  </main>
+</body>
+</html>
