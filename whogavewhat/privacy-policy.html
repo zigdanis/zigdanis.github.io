@@ -99,59 +99,60 @@
   <main>
     <p class="app">WhoGaveWhat for iPhone</p>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: October 26, 2026</p>
+    <p class="updated">Last updated: November 2, 2026</p>
 
     <p>WhoGaveWhat (shown as “Who Gave” on the Home Screen) is an app for remembering the gifts you
       give and receive. It is made by Danis Ziganshin, who is responsible for your information as
       described here. This policy explains what the app does with your information.</p>
+    <p>Cloud suggestions, usage statistics and crash reports are part of how the app works, and the
+      app has no switches to turn them on or off. By using WhoGaveWhat, you agree to the processing
+      described in this policy. If you do not agree, please do not use the app.</p>
 
     <div class="summary">
       <ul>
-        <li>Your gifts, people, photos and settings stay on your iPhone, except gift names you
-          choose to send for cloud suggestions.</li>
+        <li>Your gifts, people, photos and settings stay on your iPhone, except the gift names you
+          type, which are sent for cloud suggestions.</li>
         <li>There are no accounts, ads or tracking.</li>
         <li>Anonymous usage statistics and crash reports help me improve the app. They never
-          include names, gift titles, amounts or photos, and you can turn them off in Settings.</li>
-        <li>Cloud suggestions are optional and off until you allow them.</li>
+          include names, gift titles, amounts or photos.</li>
+        <li>Using the app means agreeing to cloud suggestions, usage statistics and crash reports;
+          there is no separate permission prompt or setting for them.</li>
       </ul>
     </div>
 
     <h2>Information stored on your device</h2>
     <p>The people, gifts, amounts, dates, occasions and photos you add are stored only in the
-      app’s storage on your iPhone. Apart from gift names you choose to send for cloud
-      suggestions (below), they are not uploaded to any server, and I have no access to them. They are included in backups of your iPhone that you make with iCloud or a computer,
+      app’s storage on your iPhone. Apart from gift names sent for cloud suggestions (below), they
+      are not uploaded to any server, and I have no access to them. They are included in backups of your iPhone that you make with iCloud or a computer,
       under your backup settings. Deleting the app deletes this information from your iPhone.</p>
     <p>When you add a photo of a person, you pick it with the system photo picker. The app receives
       only the photo you choose and keeps a copy on your device. It cannot see the rest of your
       photo library.</p>
-    <p>Without cloud suggestions, the app picks gift icons on your device, using Apple
-      Intelligence where it is available and turned on, or a built-in word list, and does not
-      suggest prices.</p>
 
-    <h2>Cloud suggestions (optional)</h2>
-    <p>WhoGaveWhat can suggest an icon and an approximate price for a gift using the Jev model
-      from TypeSafe AI. This
-      feature is off until you allow it in the Add Gift screen or turn on
-      <strong>Settings → Cloud icon suggestions</strong>. You can turn it off there at any time,
-      and the app then picks icons on your device again.</p>
+    <h2>Cloud suggestions</h2>
+    <p>WhoGaveWhat suggests an icon and an approximate price for a gift using the Jev model from
+      TypeSafe AI. The feature is always on and does not ask for permission first. When the
+      service gives no answer, for example without an internet connection, the app asks Apple
+      Intelligence on your device instead, where it is available and turned on, which can also
+      suggest a price. Otherwise it picks the icon from a built-in word list.</p>
 
     <h3>What is sent</h3>
-    <p>When the feature is on, the app sends a request when you allow the feature or pause while
-      typing a gift name. Each request contains:</p>
+    <p>The app sends a request when you pause while typing a gift name. Each request
+      contains:</p>
     <ul>
       <li>the gift name you typed, up to 80 characters;</li>
       <li>the currency you chose in the app (Russian rubles or US dollars), so the suggested price
         is in that currency;</li>
       <li>a random identifier created for this feature and used only to limit how many requests
-        one installation can make. It is not derived from your device or Apple account, and a new
-        one is created whenever you turn the feature off;</li>
+        one installation can make. It is created on the first request, is not derived from your device
+        or Apple account, and is deleted with the app;</li>
       <li>standard network information that every internet request carries, such as your IP
         address and the app and iOS versions.</li>
     </ul>
     <p>The app never sends people, contacts, dates, amounts, occasions or photos. A suggested
       price is only a hint: it is filled in as an estimate, and you can change or remove it.</p>
-    <p>Gift names can contain personal information. If you would rather not share a name, leave the
-      feature off or choose the icon yourself.</p>
+    <p>Gift names can contain personal information. If you would rather not share something, keep
+      it out of the gift name: write it in another way, or leave it out.</p>
 
     <h3>Where it goes</h3>
     <p>The request goes to the WhoGaveWhat server, which I run on Cloudflare Workers. The server
@@ -180,9 +181,7 @@
 
     <h2>Usage statistics and crash reports</h2>
     <p>To see which parts of the app are used and to fix crashes, the app sends anonymous usage
-      events and crash reports unless you turn off <strong>Settings → Diagnostics → Share usage
-      and crash reports</strong>. While it is off, nothing in this section leaves your iPhone.
-      Reports already sent are not affected.</p>
+      events and crash reports. This is always on and has no setting.</p>
 
     <h3>What is sent</h3>
     <ul>
@@ -192,9 +191,8 @@
         screen was opened from. Opening, closing, installing and updating the app are recorded
         too.</li>
       <li><strong>Counts and settings</strong>: how many gifts and people you have, whether you
-        have set yourself in the People list, the currency you chose and whether cloud suggestions
-        are on. These travel with every event and crash report as numbers and settings, never as
-        the data itself.</li>
+        have set yourself in the People list and the currency you chose. These travel with every
+        event and crash report as numbers and settings, never as the data itself.</li>
       <li><strong>Crash reports</strong>: when the app crashes, hangs or runs into an error it
         cannot handle, a report with the technical details of the failure (the code path, the
         error type and the same counts and settings) and the names of the last few usage events
@@ -234,10 +232,9 @@
     </ul>
 
     <h2>Your choices and rights</h2>
-    <p>Cloud suggestions rely on your consent, which you can withdraw at any time by turning
-      the feature off in Settings. Requests already sent are not affected. Usage statistics and
-      crash reports can be turned off in <strong>Settings → Diagnostics</strong> at any time, and
-      the app then sends nothing to PostHog or Sentry.</p>
+    <p>You agree to cloud suggestions, usage statistics and crash reports by using the app; there
+      is no separate permission. To stop all of them, delete the app. Requests and reports already
+      sent are not affected.</p>
     <ul>
       <li>Edit or delete any person or gift in the app, or delete the app to remove everything from
         your iPhone.</li>
@@ -252,11 +249,10 @@
     <h2>Children</h2>
     <p>WhoGaveWhat is for people of all ages. It has no accounts, and nothing stored in the app is
       shared with me. Usage statistics and crash reports contain no names, gift titles or other
-      personal details and can be turned off in Settings. Cloud suggestions stay off until someone
-      allows them, so a parent who would rather keep gift names on the device can simply leave the
-      feature off. If you think a
-      child has sent personal information in a gift name, email me and I will help as described
-      above.</p>
+      personal details. Gift names typed in the app are sent for cloud suggestions as described
+      above, so a parent may want to explain to a child not to put personal details in them. If
+      you think a child has sent personal information in a gift name, email me and I will help as
+      described above.</p>
 
     <h2>Changes to this policy</h2>
     <p>If the app’s handling of information changes, I will update this page and the date above
